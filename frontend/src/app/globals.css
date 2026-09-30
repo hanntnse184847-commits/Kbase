@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #eef4ff;
+  --foreground: #0f1f3d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*
+ * KBase is a light, white/blue themed app by design - it does not (yet) ship
+ * a dark palette. Without this, Windows/browser "dark mode" makes native
+ * form controls (inputs, file pickers, dropdowns) render with a dark
+ * background + dark text by default, which is what caused inputs to look
+ * like near-invisible black boxes. Pinning color-scheme to "light" forces
+ * native controls to always use light colors, matching our own styling.
+ */
+html {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100%;
+  background: linear-gradient(180deg, #eaf1ff 0%, #f7faff 45%, #ffffff 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
